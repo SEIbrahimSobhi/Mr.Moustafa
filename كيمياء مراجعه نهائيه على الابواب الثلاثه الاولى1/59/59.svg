@@ -1,0 +1,17 @@
+<svg viewBox="0 0 1466 825" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="c0_59"><path d="M-.2 825.3V-.2H1467V825.3Z"/></clipPath>
+<clipPath id="c1_59"><path d="M79.8 671.1v-487H1414.2v487Z"/></clipPath>
+<style>
+.g0_59{fill:#C00000;}
+</style>
+</defs>
+<image clip-path="url(#c0_59)" preserveAspectRatio="none" x="0" y="0" width="1467" height="825" href="img/1.png"/>
+<image clip-path="url(#c1_59)" preserveAspectRatio="none" x="80" y="184" width="1334" height="487" href="img/2.jpg"/>
+<g clip-path="url(#c0_59)">
+<image preserveAspectRatio="none" x="696" y="564" width="387" height="82" href="img/3.png"/>
+<image preserveAspectRatio="none" x="807" y="582" width="167" height="62" href="img/4.png"/>
+</g>
+<path fill-rule="evenodd" d="M686.8 637.1h387V554.8h-387v82.3Z" class="g0_59"/>
+<image clip-path="url(#c0_59)" preserveAspectRatio="none" x="798" y="573" width="167" height="62" href="img/5.png"/>
+</svg>
