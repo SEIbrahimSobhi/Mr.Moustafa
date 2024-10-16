@@ -1,0 +1,10 @@
+<svg viewBox="0 0 1466 825" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="c0_20"><path d="M-.2 825.3V-.2H1467V825.3Z"/></clipPath>
+<clipPath id="c1_20"><path d="M767.1 739.7V205.9h669.1V739.7Z"/></clipPath>
+<clipPath id="c2_20"><path d="M54.9 750.9V227.7H713.3V750.9Z"/></clipPath>
+</defs>
+<image clip-path="url(#c0_20)" preserveAspectRatio="none" x="0" y="0" width="1467" height="825" href="img/1.png"/>
+<image clip-path="url(#c1_20)" preserveAspectRatio="none" x="767" y="206" width="669" height="533" href="img/2.jpg"/>
+<image clip-path="url(#c2_20)" preserveAspectRatio="none" x="55" y="228" width="658" height="523" href="img/3.jpg"/>
+</svg>
