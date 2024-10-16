@@ -1,0 +1,23 @@
+<svg viewBox="0 0 1466 825" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="c0_57"><path d="M-.2 825.3V-.2H1467V825.3Z"/></clipPath>
+<clipPath id="c1_57"><path d="M95.2 672.2V242.4H1384.3V672.2Z"/></clipPath>
+<style>
+.g0_57{fill:#C00000;}
+</style>
+</defs>
+<image clip-path="url(#c0_57)" preserveAspectRatio="none" x="0" y="0" width="1467" height="825" href="img/1.png"/>
+<image clip-path="url(#c1_57)" preserveAspectRatio="none" x="96" y="243" width="1288" height="429" href="img/2.jpg"/>
+<g clip-path="url(#c0_57)">
+<image preserveAspectRatio="none" x="496" y="595" width="447" height="83" href="img/3.png"/>
+<image preserveAspectRatio="none" x="575" y="625" width="289" height="44" href="img/4.png"/>
+</g>
+<path fill-rule="evenodd" d="M486.6 668.8H933.7V586.5H486.6v82.3Z" class="g0_57"/>
+<g clip-path="url(#c0_57)">
+<image preserveAspectRatio="none" x="566" y="616" width="289" height="44" href="img/5.png"/>
+<image preserveAspectRatio="none" x="714" y="25" width="394" height="126" href="img/6.png"/>
+<image preserveAspectRatio="none" x="685" y="25" width="106" height="126" href="img/7.png"/>
+<image preserveAspectRatio="none" x="337" y="25" width="425" height="126" href="img/8.png"/>
+<image preserveAspectRatio="none" x="322" y="25" width="92" height="126" href="img/9.png"/>
+</g>
+</svg>
