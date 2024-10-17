@@ -58,257 +58,241 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <style>
         /* إعدادات عامة */
-    :root {
-        --primary-color: #8fe3ff;
-        --secondary-color: #1e1e1e;
-        --text-color: #fff;
-        --overlay-color: rgba(30, 30, 30, 0.8);
-        --navbar-bg: rgba(0, 0, 0, 0.95);
-    }
-    
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-    
-      /* إعدادات الجسم */
-    body {
-        font-family: 'Arial', sans-serif; /* تغيير الخط */
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* لضمان وجود الفوتر أسفل الصفحة */
-        background-color: #1e1e1e; /* لون الخلفية */
-        overflow: hidden;
-        min-height: 100vh; /* جعل الارتفاع 100% من ارتفاع العرض المرئي */
-        margin: 0; /* إلغاء أي هوامش افتراضية */
-        padding: 0; /* إلغاء أي حواف داخلية */
-        overflow-y: auto;
-    }
-    
-    /* طبقة داكنة فوق الخلفية */
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(30, 30, 30, 0.8); /* لون داكن مع شفافية */
-        z-index: -1;
-    }
-    
-    /* خلفية الصورة */
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('كيمياء.png') no-repeat center center fixed; /* خلفية جديدة */
-        background-size: cover;
-        z-index: -1;
-    }
-    
-    /* شريط التنقل */
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: var(--navbar-bg);
-        padding: 15px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-    }
-    
-    .navbar-brand {
-        font-size: 2rem;
-        font-weight: bold;
-        color: var(--primary-color);
-        transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
-    }
-    
-    .navbar-brand:hover {
-        color: #fff;
-        text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
-        transform: scale(1.1);
-    }
-    
-    /* زر القائمة (همبرغر) */
-    .menu-toggle {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        background-color: rgba(0, 0, 0, 0.8);
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-    
-    .menu-toggle:hover {
-        background-color: rgba(0, 0, 0, 1);
-    }
-    
-    .menu-toggle .bar {
-        width: 30px;
-        height: 3px;
-        background: var(--text-color);
-        margin: 4px 0;
-        transition: all 0.3s ease;
-    }
-    
-    .menu-toggle.open .bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .menu-toggle.open .bar:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .menu-toggle.open .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
-    }
-    
-    /* قائمة التنقل */
-    .navbar-links {
-        list-style: none;
-        display: flex;
-        align-items: center;
-        transition: all 0.3s ease;
-    }
-    
-    .navbar-links li {
-        margin: 0 15px;
-    }
-    
-    .navbar-links a {
-        color: var(--text-color);
-        text-decoration: none;
-        font-size: 1.125rem;
-        position: relative;
-        padding: 5px 0;
-        transition: color 0.3s ease;
-    }
-    
-    .navbar-links a:hover {
-        color: var(--primary-color);
-    }
-    
-    .navbar-links a::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -5px;
-        width: 0;
-        height: 2px;
-        background: var(--primary-color);
-        transition: width 0.3s ease;
-    }
-    
-    .navbar-links a:hover::after {
-        width: 100%;
-    }
-    
-    /* القائمة عند الشاشات الصغيرة */
-    @media (max-width: 768px) {
-        .navbar-links {
-            display: none;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* إعدادات الجسم */
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
             flex-direction: column;
-            position: absolute;
-            top: 60px;
+            justify-content: space-between; /* لضمان وجود الفوتر أسفل الصفحة */
+            background-color: #000; /* لون الخلفية الأساسي */
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* طبقة داكنة فوق الخلفية */
+        .overlay {
+            position: fixed;
+            top: 0;
             left: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-            border-radius: 5px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 0;
         }
-    
+        
+        /* خلفية الصورة */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('كيمياء.png') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -1;
+        }
+        
+        /* شريط التنقل */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        
+        .navbar-brand {
+            font-size: 32px;
+            font-weight: bold;
+            color: #8fe3ff;
+            text-transform: capitalize;
+            transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            color: #fff;
+            text-shadow: 0 0 10px #8fe3ff, 0 0 20px #8fe3ff;
+            transform: scale(1.1);
+        }
+        
+        /* زر القائمة (همبرغر) */
         .menu-toggle {
-            display: flex;
+            display: none; /* إخفاء الزر على الشاشات الكبيرة */
+            flex-direction: column;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
-    
-        .navbar-links.active {
-            display: flex;
+        
+        .menu-toggle:hover {
+            background-color: rgba(0, 0, 0, 1);
         }
-    
-        /* تعديل المسافة بين الأزرار */
+        
+        .menu-toggle .bar {
+            width: 30px;
+            height: 3px;
+            background: #fff;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-toggle.open .bar:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .menu-toggle.open .bar:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .menu-toggle.open .bar:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        
+        /* قائمة التنقل */
+        .navbar-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
         .navbar-links li {
-            margin-bottom: 8px; /* مسافة صغيرة جدًا بين الأزرار */
+            margin: 0 15px;
         }
-    
-        .navbar-links li:last-child {
-            margin-bottom: 0; /* إزالة المسافة عند آخر زر */
+        
+        .navbar-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s ease;
         }
-    }
-    
-            /* قسم الترحيب */
-            .welcome-section {
-                display: flex;
+        
+        .navbar-links a:hover {
+            color: #8fe3ff;
+        }
+        
+        .navbar-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background: #8fe3ff;
+            transition: width 0.3s ease;
+        }
+        
+        .navbar-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* القائمة عند الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .navbar-links {
+                display: none; /* إخفاء القائمة بشكل افتراضي */
                 flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                color: #fff;
-                position: relative;
-                z-index: 1;
-                flex-grow: 1; /* لجعل المحتوى يمتد مع الصفحة */
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 20px;
+                border-radius: 5px;
             }
-    
-            /* تكبير نص الترحيب */
-            .greeting-text {
-                font-size: 58px;
-                margin-bottom: 20px;
-                animation: fadeIn 2s ease-out;
+        
+            .menu-toggle {
+                display: flex; /* عرض زر القائمة */
             }
-    
-            /* تأثير الكتابة */
-            .typing-text {
-                font-size: 24px;
-                color: #8fe3ff;
+        
+            .navbar-links.active {
+                display: flex; /* عرض القائمة عند تفعيلها */
             }
-    
-            .typing-cursor {
-                font-weight: 100;
-                font-size: 24px;
-                opacity: 1;
-                animation: blink 0.7s infinite;
-            }
-    
-            @keyframes blink {
-                0% { opacity: 1; }
-                50% { opacity: 0; }
-                100% { opacity: 1; }
-            }
-    
-            /* تحسين زر CTA */
-            .cta-button {
-                background: #8fe3ff;
-                color: #000;
-                padding: 12px 25px;
-                border: none;
-                border-radius: 8px;
-                font-size: 22px;
-                cursor: pointer;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-                margin: 10px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            }
-    
-            .cta-button:hover {
-                background: #8fe3ff;
-                transform: scale(1.05);
-            }
-    
-             
+        }
+        
+        /* قسم الترحيب */
+        .welcome-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            flex-grow: 1; /* لجعل المحتوى يمتد مع الصفحة */
+        }
+        
+        /* تكبير نص الترحيب */
+        .greeting-text {
+            font-size: 58px;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-out;
+        }
+        
+        /* تأثير الكتابة */
+        .typing-text {
+            font-size: 24px;
+            color: #8fe3ff;
+        }
+        
+        .typing-cursor {
+            font-weight: 100;
+            font-size: 24px;
+            opacity: 1;
+            animation: blink 0.7s infinite;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        /* تحسين زر CTA */
+        .cta-button {
+            background: #8fe3ff;
+            color: #000;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 22px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            margin: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #8fe3ff;
+            transform: scale(1.05);
+        }
+        
         /* الفوتر */
         .footer {
             text-align: center;
@@ -329,22 +313,21 @@
             line-height: 1.5;
         }
         
-    
-            /* تحسينات عامة للشاشات الصغيرة */
-            @media (max-width: 480px) {
-                .greeting-text {
-                    font-size: 48px; /* تقليل حجم النص */
-                }
-    
-                .typing-text {
-                    font-size: 20px; /* تقليل حجم النص */
-                }
-    
-                .cta-button {
-                    font-size: 18px; /* تقليل حجم الزر */
-                    padding: 10px 20px; /* تعديل الحشوة */
-                }
+        /* تحسينات عامة للشاشات الصغيرة */
+        @media (max-width: 480px) {
+            .greeting-text {
+                font-size: 48px; /* تقليل حجم النص */
             }
+        
+            .typing-text {
+                font-size: 20px; /* تقليل حجم النص */
+            }
+        
+            .cta-button {
+                font-size: 18px; /* تقليل حجم الزر */
+                padding: 10px 20px; /* تعديل الحشوة */
+            }
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
