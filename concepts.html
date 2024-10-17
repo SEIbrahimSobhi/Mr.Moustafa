@@ -318,6 +318,8 @@
     border-top: 4px solid #FF4500;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
     margin-top: 40px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footer p {
@@ -325,7 +327,33 @@
     color: #FF4500;
     font-size: 18px;
     line-height: 1.5;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
 }
+
+/* تحسين التجاوب للشاشات الأصغر */
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px;
+    }
+
+    .footer p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 10px;
+    }
+
+    .footer p {
+        font-size: 14px;
+    }
+}
+
     </style>
 </head>
 <body>
