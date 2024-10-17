@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- وصف الموقع لتحسين محركات البحث (SEO) -->
+    <meta name="description" content="موقع شامل لطلاب الثانوية العامة يقدم ملخصات لمادة الكيمياء بالإضافة إلى امتحانات الأعوام السابقة وحلولها." />
+
+    <!-- الكلمات المفتاحية لتحسين SEO -->
+    <meta name="keywords" content="الثانوية العامة, ملخصات دراسية, امتحانات سابقة, امتحانات الأعوام السابقة, ملخصات الثانوية, مراجعات دراسية" />
+
+    <!-- إعداد عرض للجوال لضمان توافق الموقع مع مختلف الأجهزة -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- اللغة الافتراضية للموقع -->
+    <meta http-equiv="Content-Language" content="ar" />
+    <title>الاختبارات</title>
+    <meta name="author" content="Ebrahem Sobhy">
+
+    <!-- ضمان التوافق مع متصفحات الويب القديمة -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- أيقونة الموقع التي تظهر في تبويب المتصفح -->
+    <link rel="icon" href="favicon.ico" />
+
+    <!-- تحسين محركات البحث عبر Open Graph -->
+    <meta property="og:title" content="ملخصات مادة اللغة الكيمياء للثانوية العامة و امتحانات السنوات السابقة" />
+    <meta property="og:description" content="احصل على ملخصات مادة اللغة الكيمياء للثانوية العامة بالإضافة إلى امتحانات سابقة لمساعدتك في المراجعة." />
+    <meta property="og:image" content="image-link.jpg" />
+    <meta property="og:url" content="image-link.jpg" />
+
+    <!-- تحسين العرض على تويتر عبر Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ملخصات الثانوية العامة و امتحانات السنوات السابقة" />
+    <meta name="twitter:description" content="مراجعة لمادة الكيمياء عبر ملخصات وامتحانات سابقة." />
+    <meta name="twitter:image" content="image-link.jpg" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BD6ENK0BP0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BD6ENK0BP0');
+</script>
+
+    <!-- إعداد التخزين المؤقت لتحسين سرعة التحميل -->
+    <meta http-equiv="Cache-Control" content="max-age=31536000, public" />
+
+    <!-- تحسين أداء تحميل الخطوط والخدمات الخارجية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <!-- Font Awesome for social icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        /* إعدادات عامة */
+    :root {
+        --primary-color: #8fe3ff;
+        --secondary-color: #1e1e1e;
+        --text-color: #fff;
+        --overlay-color: rgba(30, 30, 30, 0.8);
+        --navbar-bg: rgba(0, 0, 0, 0.95);
+    }
+    
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+      /* إعدادات الجسم */
+    body {
+        font-family: 'Arial', sans-serif; /* تغيير الخط */
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* لضمان وجود الفوتر أسفل الصفحة */
+        background-color: #1e1e1e; /* لون الخلفية */
+        overflow: hidden;
+        min-height: 100vh; /* جعل الارتفاع 100% من ارتفاع العرض المرئي */
+        margin: 0; /* إلغاء أي هوامش افتراضية */
+        padding: 0; /* إلغاء أي حواف داخلية */
+        overflow-y: auto;
+    }
+    
+    /* طبقة داكنة فوق الخلفية */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(30, 30, 30, 0.8); /* لون داكن مع شفافية */
+        z-index: -1;
+    }
+    
+    /* خلفية الصورة */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('كيمياء.png') no-repeat center center fixed; /* خلفية جديدة */
+        background-size: cover;
+        z-index: -1;
+    }
+    
+    /* شريط التنقل */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: var(--navbar-bg);
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+    
+    .navbar-brand {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+    }
+    
+    .navbar-brand:hover {
+        color: #fff;
+        text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+        transform: scale(1.1);
+    }
+    
+    /* زر القائمة (همبرغر) */
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .menu-toggle:hover {
+        background-color: rgba(0, 0, 0, 1);
+    }
+    
+    .menu-toggle .bar {
+        width: 30px;
+        height: 3px;
+        background: var(--text-color);
+        margin: 4px 0;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-toggle.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .menu-toggle.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+    
+    /* قائمة التنقل */
+    .navbar-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-links li {
+        margin: 0 15px;
+    }
+    
+    .navbar-links a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-size: 1.125rem;
+        position: relative;
+        padding: 5px 0;
+        transition: color 0.3s ease;
+    }
+    
+    .navbar-links a:hover {
+        color: var(--primary-color);
+    }
+    
+    .navbar-links a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 2px;
+        background: var(--primary-color);
+        transition: width 0.3s ease;
+    }
+    
+    .navbar-links a:hover::after {
+        width: 100%;
+    }
+    
+    /* القائمة عند الشاشات الصغيرة */
+    @media (max-width: 768px) {
+        .navbar-links {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+        }
+    
+        .menu-toggle {
+            display: flex;
+        }
+    
+        .navbar-links.active {
+            display: flex;
+        }
+    
+        /* تعديل المسافة بين الأزرار */
+        .navbar-links li {
+            margin-bottom: 8px; /* مسافة صغيرة جدًا بين الأزرار */
+        }
+    
+        .navbar-links li:last-child {
+            margin-bottom: 0; /* إزالة المسافة عند آخر زر */
+        }
+    }
+    
+            /* عنوان الصفحة */
+    .page-title {
+        text-align: center;
+        font-size: 48px; /* زيادة حجم الخط لجعل العنوان أكثر وضوحاً */
+        color: #8fe3ff; /* الحفاظ على اللون الذهبي الفاتح */
+        margin: 100px 0 20px 0; /* زيادة المسافة العلوية أكثر لتحريك العنوان للأسفل */
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* زيادة عمق الظل لجعل العنوان بارزاً أكثر */
+        font-weight: bold; /* جعل الخط سميكاً لمزيد من الوضوح */
+    }
+    
+    
+            /* الأقسام */
+            .section {
+                padding: 20px 10px;
+                text-align: center;
+                margin: 20px auto;
+                width: 90%;
+            }
+    
+            .section-title {
+                font-size: 28px; /* حجم الخط المعدل */
+                margin-bottom: 20px;
+                color: #8fe3ff;
+                font-weight: bold;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            }
+    
+            /* تصميم الوحدات */.rectangles-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        direction: rtl;
+        padding: 20px; /* إضافة مساحة داخلية */
+    }
+    
+    .rectangle {
+        width: 120px;
+        height: 60px;
+        margin: 10px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(0, 150, 255, 0.3)); /* تدرج للألوان */
+        border-radius: 12px; /* زوايا دائرية */
+        display: flex; /* تغيير inline-flex إلى flex */
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        color: #ffffff; /* لون النص */
+        font-weight: bold; /* نص عريض */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* ظل للنص */
+        cursor: pointer;
+        transition: all 0.3s ease; /* تأثيرات سريعة */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* ظلال أكثر وضوحًا */
+    }
+    
+    /* تأثيرات عند التحويم */
+    .rectangle:hover {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(0, 150, 255, 0.5)); /* تغيير لون الخلفية عند التحويم */
+        transform: scale(1.05); /* تكبير خفيف */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* زيادة الظلال عند التحويم */
+    }
+    
+    /* تحسين استجابة الوحدات */
+    @media (max-width: 768px) {
+        .rectangle {
+            width: 120px; /* الحفاظ على نفس العرض */
+            height: 60px;
+            font-size: 16px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .rectangle {
+            width: 100px; /* تقليل العرض للشاشات الصغيرة */
+            height: 50px;
+            font-size: 14px;
+        }
+    }
+    
+            /* تحسين العرض على الشاشات الصغيرة */
+            @media (max-width: 480px) {
+                .page-title {
+                    font-size: 28px; /* حجم الخط المعدل على الشاشات الصغيرة */
+                }
+    
+                .section-title {
+                    font-size: 24px; /* حجم الخط المعدل */
+                }
+    
+                .navbar-brand {
+                    font-size: 28px; /* حجم الخط المعدل */
+                }
+    
+                .navbar-links a {
+                    font-size: 16px; /* حجم الخط المعدل */
+                }
+            }
+    
+    /* الفوتر */
+    .footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 16px;
+        background: rgba(0, 0, 0, 0.9);
+        border-top: 4px solid #8fe3ff;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+        margin-top: 40px;
+    }
+    
+    .footer p {
+        margin: 0;
+        color: #8fe3ff;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="navbar-brand">Mr.Moustafa</div>
+        <div class="menu-toggle" id="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="navbar-links" id="navbar-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="concepts.html">المفاهيم</a></li>
+            <li><a href="exams.html">الاختبارات</a></li>
+            <li><a href="help.html">المساعدة</a></li>
+        </ul>
+    </nav>
+
+    <!-- عنوان الصفحة -->
+    <div class="page-title">كيمياء</div>
+    <!-- قسم المستطيلات -->
+    <div class="section" id="algebra-section">
+        <h2 class="section-title">مراجعة ليلة الإمتحان</h2>
+        <div class="rectangles-container">
+            <div class="rectangle" onclick="openBook('كيمياء مراجعه نهائيه على الابواب الثلاثه الاولى1/index.html')">الجزء الأول</div>
+            <div class="rectangle" onclick="openBook('كيمياء مراجعة ليلة الامتحان الجزء الثانى كهربيه وعضويه/index.html')">الجزء الثاني</div>
+        </div>
+    </div>
+
+    <!-- القسم الثاني: التفاضل و التكامل -->
+    <div class="section" id="calculus-section">
+        <h2 class="section-title">إمتحانات</h2>
+        <div class="rectangles-container">
+            <div class="rectangle" onclick="openBook('امتحان-تجريبي-كيمياء.html')">امتحان تجريبي</div>
+            <div class="rectangle" onclick="openBook('كيمياء1 2020.html')">امتحان1 2020</div>
+            <div class="rectangle" onclick="openBook('كيمياء2 2020.html')">امتحان2 2020</div>
+            <div class="rectangle" onclick="openBook('كيمياء3 2020.html')">امتحان3 2020</div>
+            <div class="rectangle" onclick="openBook('كيمياء4 2020.html')">امتحان4 2020</div>
+            <div class="rectangle" onclick="openBook('كيمياء5 2020.html/كيمياء5 2020.html')">امتحان5 2020</div>
+            <div class="rectangle" onclick="openBook('كيمياء6 2020.html/كيمياء6 2020.html')">امتحان6 2020</div>
+            <div class="rectangle" onclick="openBook('كيمياء1-2019.html')">امتحان1 2019</div>
+            <div class="rectangle" onclick="openBook('كيمياء2-2019.html')">امتحان2 2019</div>
+            <div class="rectangle" onclick="openBook('كيمياء3-2019.html')">امتحان3 2019</div>
+            <div class="rectangle" onclick="openBook('كيمياء4-2019.html')">امتحان4 2019</div>
+            <div class="rectangle" onclick="openBook('كيمياء5-2019.html')">امتحان5 2019</div>
+            <div class="rectangle" onclick="openBook('كيمياء1-2018.html')">امتحان 2018</div>
+            <div class="rectangle" onclick="openBook('كيمياء1-2017.html')">امتحان1 2017</div>
+            <div class="rectangle" onclick="openBook('كيمياء2-2017.html')">امتحان2 2017</div>
+            <div class="rectangle" onclick="openBook('امتحان-كيمياء-2016.html')">امتحان 2016</div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <p>النجاح يأتي بالعمل الجاد والانضباط. كل جهد تبذله اليوم يقربك خطوة نحو تحقيق أحلامك. لا تستسلم، فالفشل مجرد درس نحو نجاح أكبر.</p>
+    </footer>
+
+    <script>
+
+        // وظائف فتح الكتاب
+        function openBook(url) {
+            window.open(url, '_self'); // فتح الرابط داخل نفس النافذة
+        }
+
+        // قائمة التنقل
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarLinks = document.getElementById('navbar-links');
+
+        menuToggle.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
